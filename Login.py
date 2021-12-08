@@ -43,3 +43,5 @@ check = driver.find_element_by_class_name("mat-checkbox-inner-container").click(
 
 
 login = driver.find_element_by_id("loginButton").click()
+
+driver.quit()
