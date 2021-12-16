@@ -8,11 +8,11 @@ from selenium.webdriver.common import by
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import helpers.registerhelper as reghelper
-import userHelper as userHelp
+import helpers.userHelper as userHelp
 
 
 details = {
-    "email": "bagidss@test.com",
+    "email": "bagidsssasasdaaaaaa@test.com",
     "password": "asaasaas",
     "answer": "da"
 }

@@ -13,11 +13,13 @@ def userRegister(details,driver):
     element = driver.find_element_by_xpath("//*[@class='mat-toolbar-row']/button[@class='mat-focus-indicator mat-menu-trigger buttons mat-button mat-button-base']").click()
     element = driver.find_element_by_id("navbarLoginButton").click()
     
+    #driver.implicitly_wait(10)
     wait = WebDriverWait(driver, 10)
     wait.until(ec.presence_of_element_located((By.ID, "newCustomerLink")))
     element = driver.find_element_by_id('newCustomerLink')
     element.click()
 
+    #driver.implicitly_wait(10)
     wait.until(ec.presence_of_element_located((By.ID,'emailControl')))
     email = driver.find_element_by_id('emailControl')
     email.clear()
@@ -43,6 +45,7 @@ def userRegister(details,driver):
 
 def userLogin(details,driver):
     
+    #driver.implicitly_wait(10)
     wait = WebDriverWait(driver,10)
     wait.until(ec.presence_of_element_located((By.ID,"email")))
     email = driver.find_element_by_id("email")
@@ -61,6 +64,7 @@ def userLogin(details,driver):
 
 def userLogout(driver):
 
+    #driver.implicitly_wait(10)
     wait = WebDriverWait(driver,10)
     wait.until(ec.presence_of_element_located((By.XPATH,"//*[@class='mat-toolbar-row']/button[@class='mat-focus-indicator mat-menu-trigger buttons mat-button mat-button-base']")))
     element = driver.find_element_by_xpath("//*[@class='mat-toolbar-row']/button[@class='mat-focus-indicator mat-menu-trigger buttons mat-button mat-button-base']").click()
