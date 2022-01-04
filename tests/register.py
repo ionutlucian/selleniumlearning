@@ -12,13 +12,14 @@ import helpers.config as config
 
 
 details = {
-    "email": "bagaa@test.com",
+    "email": "bagasaaaaaa@test.com",
     "password": "asaasaas",
     "answer": "da"
 }
 driver = webdriver.Chrome("../chromedriver.exe")
 
 driver.get(config.drivers_config["URL"])
+#driver.(getattr(config.drivers_config["fullscreen"]))()
 driver.fullscreen_window()
 
 userHelp.userRegister(details, driver)
