@@ -23,15 +23,17 @@ import json
 file = open("data.json")
 data = json.load(file)
 
-driver = webdriver.Chrome("../chromedriver.exe")
+for i in range(len(data)):
 
-driver.get(config.drivers_config["URL"])
+    driver = webdriver.Chrome("../chromedriver.exe")
+
+    driver.get(config.drivers_config["URL"])
 #driver.(getattr(config.drivers_config["fullscreen"]))()
-driver.fullscreen_window()
+    driver.fullscreen_window()
 #print(data["first"]["email"])
-userHelp.userRegister(data[1], driver)
+    userHelp.userRegister(data[i], driver)
 
-userHelp.userLogin(data[1],driver)
+    userHelp.userLogin(data[i],driver)
 
-userHelp.userLogout(driver)
-driver.quit()
+    userHelp.userLogout(driver)
+    driver.quit()
