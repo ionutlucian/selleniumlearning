@@ -9,22 +9,29 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import helpers.userHelper as userHelp
 import helpers.config as config
+import json
 
 
-details = {
-    "email": "bagasaaaaaa@test.com",
-    "password": "asaasaas",
-    "answer": "da"
-}
+
+
+
+#details = {
+#    "email": "bagasaaaaaa@test.com",
+#    "password": "asaasaas",
+#    "answer": "da"
+#}
+file = open("data.json")
+data = json.load(file)
+
 driver = webdriver.Chrome("../chromedriver.exe")
 
 driver.get(config.drivers_config["URL"])
 #driver.(getattr(config.drivers_config["fullscreen"]))()
 driver.fullscreen_window()
+#print(data["first"]["email"])
+userHelp.userRegister(data[1], driver)
 
-userHelp.userRegister(details, driver)
-
-userHelp.userLogin(details,driver)
+userHelp.userLogin(data[1],driver)
 
 userHelp.userLogout(driver)
 driver.quit()
