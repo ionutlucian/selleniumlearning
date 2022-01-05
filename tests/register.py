@@ -12,14 +12,6 @@ import helpers.config as config
 import json
 
 
-
-
-
-#details = {
-#    "email": "bagasaaaaaa@test.com",
-#    "password": "asaasaas",
-#    "answer": "da"
-#}
 file = open("data.json")
 data = json.load(file)
 
@@ -30,7 +22,7 @@ for i in range(len(data)):
     driver.get(config.drivers_config["URL"])
 #driver.(getattr(config.drivers_config["fullscreen"]))()
     driver.fullscreen_window()
-#print(data["first"]["email"])
+
     userHelp.userRegister(data[i], driver)
 
     userHelp.userLogin(data[i],driver)
