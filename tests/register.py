@@ -7,28 +7,25 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common import by
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import helpers.registerhelper as reghelper
 import helpers.userHelper as userHelp
+import helpers.config as config
+import json
 
 
-details = {
-    "email": "bagidsssasasdaaaaaa@test.com",
-    "password": "asaasaas",
-    "answer": "da"
-}
-chromeOptions = Options()
-chromeOptions.add_argument("--kiosk")
+file = open("data.json")
+data = json.load(file)
 
-driver = webdriver.Chrome("../chromedriver.exe",options = chromeOptions)
+for i in range(len(data)):
 
+    driver = webdriver.Chrome("../chromedriver.exe")
 
-driver.get("http://localhost:3000")
+    driver.get(config.drivers_config["URL"])
+#driver.(getattr(config.drivers_config["fullscreen"]))()
+    driver.fullscreen_window()
 
+    userHelp.userRegister(data[i], driver)
 
+    userHelp.userLogin(data[i],driver)
 
-userHelp.userRegister(details, driver)
-
-userHelp.userLogin(details,driver)
-
-userHelp.userLogout(driver)
-driver.quit()
+    userHelp.userLogout(driver)
+    driver.quit()
