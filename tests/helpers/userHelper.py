@@ -20,8 +20,6 @@ def userRegister(details,driver):
     driver.find_element_by_css_selector("a[class='cc-btn cc-dismiss']").click()
     driver.find_element_by_id("navbarAccount").click()
     driver.find_element_by_id("navbarLoginButton").click()
-    
-    driver.implicitly_wait(10)
     driver.find_element_by_id('newCustomerLink').click()
     
 

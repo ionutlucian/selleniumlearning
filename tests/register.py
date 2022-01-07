@@ -20,7 +20,7 @@ for i in range(len(data)):
     driver = webdriver.Chrome("../chromedriver.exe")
 
     driver.get(config.drivers_config["URL"])
-#driver.(getattr(config.drivers_config["fullscreen"]))()
+
     driver.fullscreen_window()
 
     userHelp.userRegister(data[i], driver)

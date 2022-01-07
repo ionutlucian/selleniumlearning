@@ -1,6 +1,7 @@
 
 drivers_config = {
     "URL": "http://localhost:3000",
-    "browser": "Chrome('../chromedriver.exe')",
-    "fullscreen" :"fullscreen_window"
+    "URL1":"https://juice-shop.herokuapp.com/#/",
+    "browser": "Chrome('../chromedriver.exe')"
+    
 }
